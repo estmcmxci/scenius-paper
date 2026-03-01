@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Scenius OG Image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #faf9f7;
+    position: relative;
+  }
+
+  .card {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 120px;
+  }
+
+  /* Subtle grid of thin lines — nods to the mathematical/simulation nature */
+  .grid-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    opacity: 0.032;
+    background-image:
+      linear-gradient(to right, #1c1917 1px, transparent 1px),
+      linear-gradient(to bottom, #1c1917 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Teal accent bar — left edge, structural */
+  .accent-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #2d7a7a;
+  }
+
+  /* Thin horizontal rule */
+  .rule {
+    width: 80px;
+    height: 1.5px;
+    background: #2d7a7a;
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 86px;
+    color: #1c1917;
+    letter-spacing: -2.5px;
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+
+  .subtitle {
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: #44403c;
+    line-height: 1.45;
+    max-width: 720px;
+    margin-bottom: 48px;
+    letter-spacing: -0.2px;
+  }
+
+  .divider {
+    width: 100%;
+    max-width: 960px;
+    height: 1px;
+    background: #e7e5e4;
+    margin-bottom: 28px;
+  }
+
+  .author {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #78716c;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .author span {
+    color: #2d7a7a;
+  }
+
+  /* Corner notation — like a paper reference number */
+  .corner-ref {
+    position: absolute;
+    top: 40px;
+    right: 48px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #a8a29e;
+    letter-spacing: 0.5px;
+  }
+
+  /* Bottom right — like a page footer */
+  .footer-mark {
+    position: absolute;
+    bottom: 40px;
+    right: 48px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #d6d3d1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-overlay"></div>
+  <div class="accent-bar"></div>
+
+  <div class="corner-ref">February 2026</div>
+
+  <div class="rule"></div>
+  <h1 class="title">Scenius</h1>
+  <p class="subtitle">A Reputation-Weighted Prediction Market<br>for Music Catalog Pricing</p>
+  <div class="divider"></div>
+  <p class="author">estmcmxci.eth <span>&middot;</span> Trece Research <span>&middot;</span> 2026</p>
+
+  <div class="footer-mark">Product Paper</div>
+</div>
+</body>
+</html>
