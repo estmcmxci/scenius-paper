@@ -2,13 +2,21 @@ import { useEffect, useRef, useState } from 'react';
 import { usePaperReader } from '../context/PaperReaderContext';
 
 const SECTION_LABELS: Record<string, string> = {
-  introduction: 'I. Introduction',
-  'related-work': 'II. Related Work',
-  'model-methods': 'III. Model & Methods',
-  results: 'V. Results',
-  discussion: 'VI. Discussion',
-  'limitations-future-work': 'VII. Limitations',
-  conclusion: 'VIII. Conclusion',
+  abstract: 'Abstract',
+  introduction: '1. Introduction',
+  'the-signal': '2. The Signal',
+  reputation: '3. Reputation',
+  aggregation: '4. Aggregation',
+  'the-market': '5. The Market',
+  incentive: '6. Incentive',
+  distribution: '7. Distribution',
+  identity: '8. Identity',
+  'markets-as-apis': '9. Markets as APIs',
+  'competitive-landscape': '10. Competitive Landscape',
+  privacy: '11. Privacy',
+  results: '12. Results',
+  roadmap: '13. Roadmap',
+  conclusion: '14. Conclusion',
   references: 'References',
 };
 
@@ -33,10 +41,10 @@ export function Header() {
     <header className="header">
       <div className="header-left">
         <h1 className="header-title">
-          Reputation-Weighted Prediction Markets
+          Scenius
         </h1>
         <span className="header-meta">
-          Emile Marcel Agustin &middot; Trece Research &middot; 2026
+          estmcmxci.eth &middot; Trece Research &middot; 2026
         </span>
       </div>
       <div className="header-right">

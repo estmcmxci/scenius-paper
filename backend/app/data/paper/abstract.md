@@ -1,0 +1,5 @@
+## Abstract
+
+Young music catalogs trade at a uniform discount because backward-looking data cannot distinguish future breakouts from one-hit wonders — yet the people closest to the music already know. Scenius is a reputation-weighted prediction market that captures this forward-looking conviction and makes it legible to catalog buyers. Participants predict binary breakout events on a weekly resolution cycle; their influence in the market scales with demonstrated accuracy, not capital. Reputation-weighted aggregation consistently outperforms both equal-weighted and capital-weighted mechanisms across all wealth-skill regimes ($p < 10^{-15}$, 630 simulation runs). The implementation is built on SoundCloud's discovery infrastructure, ENS-based portable identity, and passkey-embedded wallets for non-crypto-native participants. The resulting signal — calibrated breakout probabilities for individual artists — can be licensed directly to actuarial pricing models, compressing the uncertainty discount where institutional data does not yet exist.
+
+---

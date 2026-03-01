@@ -40,14 +40,22 @@ DATA_DIR = Path(__file__).parent / "data" / "paper"
 LATEX_DIR = Path(__file__).resolve().parent.parent.parent.parent / "latex_text"
 
 SECTIONS = [
-    {"file": "introduction_draft.md", "slug": "introduction", "title": "I. Introduction", "order": 1},
-    {"file": "related_work_draft.md", "slug": "related-work", "title": "II. Related Work", "order": 2},
-    {"file": "model_methods_draft.md", "slug": "model-methods", "title": "III. Model and Experimental Design", "order": 3},
-    {"file": "results_draft.md", "slug": "results", "title": "V. Results", "order": 4},
-    {"file": "discussion_draft.md", "slug": "discussion", "title": "VI. Discussion", "order": 5},
-    {"file": "limitations_future_work_draft.md", "slug": "limitations-future-work", "title": "VII. Limitations and Future Work", "order": 6},
-    {"file": "conclusion_draft.md", "slug": "conclusion", "title": "VIII. Conclusion", "order": 7},
-    {"file": "references_draft.md", "slug": "references", "title": "References", "order": 8},
+    {"file": "abstract.md", "slug": "abstract", "title": "Abstract", "order": 0},
+    {"file": "introduction_the_pricing_problem.md", "slug": "introduction", "title": "1. Introduction — The Pricing Problem", "order": 1},
+    {"file": "the_signal_what_a_prediction_is.md", "slug": "the-signal", "title": "2. The Signal — What a Prediction Is", "order": 2},
+    {"file": "reputation_the_scoring_loop.md", "slug": "reputation", "title": "3. Reputation — The Scoring Loop", "order": 3},
+    {"file": "reputation-weighted_aggregation_the_mechanism.md", "slug": "aggregation", "title": "4. Reputation-Weighted Aggregation — The Mechanism", "order": 4},
+    {"file": "the_market_how_it_runs.md", "slug": "the-market", "title": "5. The Market — How It Runs", "order": 5},
+    {"file": "incentive_why_tastemakers_participate.md", "slug": "incentive", "title": "6. Incentive — Why Tastemakers Participate", "order": 6},
+    {"file": "distribution_the_surface_layer.md", "slug": "distribution", "title": "7. Distribution — The Surface Layer", "order": 7},
+    {"file": "identity_portable_reputation.md", "slug": "identity", "title": "8. Identity — Portable Reputation", "order": 8},
+    {"file": "markets_as_apis_the_output.md", "slug": "markets-as-apis", "title": "9. Markets as APIs — The Output", "order": 9},
+    {"file": "competitive_landscape.md", "slug": "competitive-landscape", "title": "10. Competitive Landscape", "order": 10},
+    {"file": "privacy.md", "slug": "privacy", "title": "11. Privacy", "order": 11},
+    {"file": "results.md", "slug": "results", "title": "12. Results", "order": 12},
+    {"file": "roadmap.md", "slug": "roadmap", "title": "13. Roadmap", "order": 13},
+    {"file": "conclusion.md", "slug": "conclusion", "title": "14. Conclusion", "order": 14},
+    {"file": "references.md", "slug": "references", "title": "References", "order": 15},
 ]
 
 # Figure placeholder patterns → image markdown replacements
@@ -103,7 +111,7 @@ async def paper_full():
             "order": sec["order"],
         })
     return {
-        "title": "Reputation-Weighted Prediction Markets Under Wealth Heterogeneity and Heavy Tails",
+        "title": "Scenius: A Reputation-Weighted Prediction Market for Music Catalog Pricing",
         "sections": sections,
     }
 
