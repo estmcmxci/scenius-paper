@@ -3,7 +3,32 @@ __pycache__/
 .venv/
 *.egg-info/
 dist/
+build/
 node_modules/
+.next/
+
+# Envs (any flavor)
 .env
+.env.*
+!.env.example
+!.env.local.example
+
+# IDE / OS
 .DS_Store
 .vercel
+.idea/
+.vscode/
+
+# LaTeX build outputs
+*.aux
+*.log
+*.out
+*.blg
+*.bbl
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Jupyter
+.ipynb_checkpoints/
