@@ -11,7 +11,7 @@ export function ChatPanel() {
   const chatKit = useChatKit({
     api: {
       url: import.meta.env.VITE_CHATKIT_URL || '/chatkit',
-      domainKey: 'domain_pk_69a3be2ed9e48197986b89ea1dc32ca004f8eb1165ce28c0',
+      domainKey: 'domain_pk_69e40f88464c81979ed5490d4f68820906ba6f1207e63ccf',
     },
     theme: paperTheme,
     startScreen: {
