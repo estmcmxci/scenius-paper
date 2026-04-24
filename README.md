@@ -1,41 +1,68 @@
-# Scenius Paper
+# scenius-paper
 
-Interactive product paper for **Scenius** — reputation-weighted prediction markets for music catalog valuation.
+Monorepo for two interactive papers by estmcmxci.eth (Trece Research).
 
-**Live:** coming soon
+## Layout
 
-## Architecture
+```
+apps/
+├── research/           # Research paper: "Reputation-Weighted Prediction Markets
+│   ├── frontend/       # Under Wealth Heterogeneity and Heavy Tails"
+│   └── backend/        # → https://research.scenius.blog
+├── product/            # Product paper: "Scenius: A Reputation-Weighted Prediction
+│   ├── frontend/       # Market for Music Catalog Pricing"
+│   └── backend/        # → https://scenius-blog.vercel.app
+papers/
+├── research/           # LaTeX source, PDF, drafts for research paper
+└── product/            # Markdown, LaTeX, PDF for product paper
+```
 
-**Frontend** — React 19 + Vite
-- Split-pane layout: paper reader alongside AI chat
-- Table of contents navigation, text selection for contextual questions
+Each `apps/*` is independently deployable. Frontends use Vite + React 19, backends use FastAPI + `openai-agents` + ChatKit.
 
-**Backend** — FastAPI + OpenAI Agents SDK
-- Research agent with paper search and simulation tools
-- Live simulation engine for custom parameter sweeps
+## Deploy targets
 
-## Setup
+| App | Vercel | Railway | ChatKit domainKey |
+|---|---|---|---|
+| `apps/research` | `paper-chat-frontend` → research.scenius.blog | project `paper-chat`, service `paper-chat` | `domain_pk_69e40f88…3ccf` |
+| `apps/product`  | `scenius-blog` → scenius-blog.vercel.app (re-link required) | project `scenius-paper`, service `remarkable-spirit` | `domain_pk_69a3be2e…28c0` |
 
-### Backend
+## Develop
 
 ```bash
-cd backend
+# Research paper
+cd apps/research/backend
 python -m venv .venv && source .venv/bin/activate
 pip install -e .
-# Set OPENAI_API_KEY in .env
 uvicorn app.main:app --reload --port 8000
+# in another shell:
+cd apps/research/frontend && npm install && npm run dev
+
+# Product paper (same, but under apps/product/)
 ```
 
-### Frontend
+Both backends need `OPENAI_API_KEY` in env. Both frontends read `VITE_CHATKIT_URL` / `VITE_API_URL` from `.env.production` or `.env.local`.
+
+## Deploy
 
 ```bash
-cd frontend
-npm install
-npm run dev
+# Research frontend
+cd apps/research/frontend
+vercel --prod            # links to paper-chat-frontend (prj_EJALKf2…)
+
+# Research backend
+cd apps/research/backend
+railway link             # project: paper-chat, service: paper-chat
+railway up
+
+# Product frontend
+cd apps/product/frontend
+vercel link              # one-time, pick: scenius-blog
+vercel --prod
+
+# Product backend
+cd apps/product/backend
+railway link             # project: scenius-paper, service: remarkable-spirit
+railway up
 ```
-
-## Status
-
-🚧 In progress — content blank, scaffold only.
 
 **Author:** estmcmxci.eth — Trece Research, NYC
